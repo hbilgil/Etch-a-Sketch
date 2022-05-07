@@ -21,3 +21,11 @@ div.grid-item:hover {
     background-color: black;
     color: black;
 }
+
+.newGrid {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 2em;
+    border-style: solid;
+    border-color: blue;
+}
