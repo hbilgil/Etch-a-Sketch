@@ -1,19 +1,17 @@
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+  }
+  
 #container {
-    position: relative;
-    top: 30px;
-    outline: 2px solid #000;
-    font-size: 0;
-    margin: auto;
-    height: 960px;
-    width: 960px;
-    padding: 0;
-    border: none;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
-
-.cell {
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: 1px solid #000;
-    display: inline-block;
+  
+.grid-item {
+    padding: 1em;
+    border: 1px solid #ddd;
+    text-align: center;
 }
