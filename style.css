@@ -14,4 +14,10 @@
     padding: 1em;
     border: 1px solid #ddd;
     text-align: center;
+    color: white;
+}
+
+div.grid-item:hover {
+    background-color: black;
+    color: black;
 }
