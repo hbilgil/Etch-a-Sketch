@@ -1,30 +1,17 @@
-const container = document.getElementById("container");
-let rows = document.getElementsByClassName("gridRow");
-let cells = document.getElementsByClassName("cell");
+// Function that builds a grid in the "container"
 
-// Creates a default grid sized 16x16
-function defaultGrid() {
-    makeRows(16);
-    makeColumns(16);
-}
-
-// Takes (rows, columns) input and makes a grid
-function makeRows(rowNum) {
-
-    // Creates rows
-    for (r = 0; r < rowNum; r++) {
-        let row = document.createElement("div");
-        container.appendChild(row).className = "gridRow";
+function createCell(x) {
+    for (var rows = 0; rows < x; rows++) {
+        for (var columns = 0; columns < x; columns++) {
+            $("#container").append("<div class='cell'></div>");
+        };
     };
+    $(".cell").width(960/x);
+    $(".cell").height(960/x);
 };
 
-// Creates columns
-function makeColumns(cellNum) {
-    for (i = 0; i < rows.length; i++) {
-        for (j = 0; j < cellNum; j++) {
-            let newCell = document.createElement("div");
-            rows[j].appendChild(newCell).className = "cell";
-        };
+// Function that clears the grid
 
-    };
+function clearCell(){
+    $(".cell").remove();
 };
