@@ -77,13 +77,21 @@ function changeColor(e) {
   } 
 }
 
-  /*---new function-----
+/*---new function-----
 Triggering color change function*/
 
 function userColorSelection(e) {
   color = e.target.value;
 }
 
+/*---new function-----
+allowing to clear grid layout by just clicking a button*/
+
+function eraseAllColor() {
+  gridPixels = container.querySelectorAll('div');
+  gridPixels.forEach(gridPixel => gridPixel.style.backgroundColor = '#ffffff');
+  return color = 'black'; // will turn the color mode into the default
+}
 
 
 
