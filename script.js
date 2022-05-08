@@ -27,7 +27,7 @@ gridPixels.forEach(gridPixel => gridPixel.addEventListener('mouseover', colorGri
 createGrid(value);
 
 /*---new function-----
-allowing to change color among black- random - grayscale */
+allowing to color the cells by choosing black- random - grayscale color modes*/
 
 function colorGrid() {
   switch (color) {
@@ -58,5 +58,40 @@ function colorGrid() {
           break;
   }
 }
+
+
+  /*---new function-----
+Allowing to change color*/
+
+function changeColor(e) {
+  switch (e.target.dataset.color) { 
+      case 'rainbow':
+          color = 'rainbow';
+          break;  
+      case 'gray':
+          color = 'gray';
+          break;
+      default:
+          color = 'black';
+          break;
+  } 
+}
+
+  /*---new function-----
+Triggering color change function*/
+
+function userColorSelection(e) {
+  color = e.target.value;
+}
+
+
+
+
+
+
+
+
+
+
 
 
