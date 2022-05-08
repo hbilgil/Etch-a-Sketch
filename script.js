@@ -122,6 +122,13 @@ createGrid(value);
 eraseAllColor();
 }
 
+// Event Listeners for UI
+colorButtons.forEach(colorButton => colorButton.addEventListener('click', changeColor));
+clearButton.addEventListener('click', eraseAllColor);
+resizeButton.addEventListener("click", getNewGridSize);
+
+
+
 
 
 
