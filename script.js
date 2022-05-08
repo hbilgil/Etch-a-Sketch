@@ -26,3 +26,37 @@ gridPixels.forEach(gridPixel => gridPixel.addEventListener('mouseover', colorGri
 };
 createGrid(value);
 
+/*---new function-----
+allowing to change color among black- random - grayscale */
+
+function colorGrid() {
+  switch (color) {
+      case 'rainbow':
+          this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+          this.classList.remove('gray');
+          break;
+      case 'gray':
+          if (this.style.backgroundColor.match(/rgba/)) {
+              let currentOpacity = Number(this.style.backgroundColor.slice(-4, -1));
+              if (currentOpacity <= 0.9) {
+                  this.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + 0.1})`;
+                  this.classList.add('gray');
+              }
+          } else if (this.classList == 'gray' && this.style.backgroundColor == 'rgb(0, 0, 0)') {
+              return;
+          } else {
+              this.style.backgroundColor = 'black';
+          }
+          break;
+      case 'black':
+          this.style.backgroundColor = '#000000';
+          this.classList.remove('gray');
+          break;
+      default:
+          this.style.backgroundColor = color;
+          this.classList.remove('gray');
+          break;
+  }
+}
+
+
