@@ -94,6 +94,34 @@ function eraseAllColor() {
 }
 
 
+  /*---new function-----
+allowing to get a new grid layout by prompting a new number of grid*/
+
+function getNewGridSize(){
+
+  let validInput = false;
+
+  while(validInput === false){ //while loop for seeking an integer value between 2 and 100
+    let newValue = prompt("Enter a new grid size between 2 and 100 units:");
+
+    if(newValue === null){
+      return;
+    }
+    else if(newValue && !isNaN(newValue)){
+      newValue = Number(newValue);
+
+      if(newValue >=2 && newValue <= 100){
+        value = newValue; //new value will be kept for new grid size
+        validInput = true;
+      }
+    }
+  }
+container = document.getElementById('container');
+while (container.firstChild) container.removeChild(container.firstChild); //we have to completely delete child nodes created as default for preventing rewriting
+createGrid(value);
+eraseAllColor();
+}
+
 
 
 
