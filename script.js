@@ -45,7 +45,7 @@ function colorGrid() {
           } else if (this.classList == 'gray' && this.style.backgroundColor == 'rgb(0, 0, 0)') {
               return;
           } else {
-              this.style.backgroundColor = 'black';
+              this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
           }
           break;
       case 'black':
