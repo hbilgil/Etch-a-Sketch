@@ -1,18 +1,28 @@
-const container = document.getElementById('container');
+//variables defined for functions, DOM and UI
+
+let container = document.getElementById('container'); //let used as container will be called in 2 different functions
+const colorButtons = document.querySelectorAll('.color-choice');
+const clearButton = document.getElementById('clearButton');
+const resizeButton = document.getElementById('resizeButton');
+let color = 'black'; //initial color is chosen as black when page is loaded
+let value = 16; //onload grid size
 
 /*---new function-----
 allowing to create default grid by 16x16 */
 
-function makeRows(rows, cols) {
+function createGrid(value) {
 
-    container.style.setProperty('--grid-rows', rows);
-    container.style.setProperty('--grid-cols', cols);
+  container.style.setProperty('--grid-rows', value);
+  container.style.setProperty('--grid-cols', value);
 
-    for (c = 0; c < (rows * cols); c++) {
-      let cell = document.createElement("div");
-      cell.innerText = (c + 1);
-      container.appendChild(cell).className = "grid-item";
-    };
+  for (i = 0; i < (value * value); i++) {
+    let cell = document.createElement("div");
+    container.appendChild(cell).className = "grid-item";
   };
-  
-  makeRows(16, 16);
+
+let gridPixels = container.querySelectorAll('div');
+gridPixels.forEach(gridPixel => gridPixel.addEventListener('mouseover', colorGrid)); //colorGrid function called when mouse rotates inside the grid
+
+};
+createGrid(value);
+
