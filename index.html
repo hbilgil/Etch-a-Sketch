@@ -10,9 +10,37 @@
 </head>
 
 <body>
+  <div class="top-container">
 
-    <center><button class="newGrid">Create New Grid</button></center>
+    <h1 class="etch-a-sketch">Etch-A-Sketch</h1>
+    <div class="buttons">
+      <button class="color-choice" data-color="black" type="button">Black</button>
+      <button class="color-choice" data-color="rainbow" type="button">Rainbow</button>
+      <button class="color-choice" data-color="gray" type="button">Gray Scale</button>
+      <button id="clearButton" class="control-button">Clear</button>
+      <button id="resizeButton" class="control-button">Resize</button>
+    </div>
+
+  </div>
+  
+  <div class="container-wrapper">
     <div id="container"></div>
+  </div>
+
+  <footer class="footer">
+
+    <p>
+      Copyright ©
+      <script>
+        document.write(new Date().getFullYear())
+      </script>
+      Halil Bilgil
+    </p>
+
+    <a href="https://github.com/hbilgil" target="_blank"></a>
+
+  </footer>
+
 </body>
 
 <script type="text/javascript" src="script.js""></script>
